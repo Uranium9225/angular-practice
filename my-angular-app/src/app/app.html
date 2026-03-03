@@ -1,0 +1,14 @@
+<div class="main">
+  <h1>{{ componentTitle }}</h1>
+
+  <label for="txtAddItem">Add an Item to the list:</label>&nbsp;
+  <input #newItem type="text" id="txtAddItem">
+  &nbsp;
+  <button (click)="addItem(newItem.value)">Add</button>
+
+    <ul>
+      @for(item of allItems; track item.description){
+      <li>{{item.description}}</li>
+      }
+    </ul>
+</div>
