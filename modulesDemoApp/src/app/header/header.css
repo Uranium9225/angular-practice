@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+  margin: 10px 10px;
+  background-color: #458eb0;
+  padding: 10px;
+  color: white;
+  font-variant: small-caps;
+  border-radius: 10px;
+}
+
+a:hover {
+  background-color: #37708b;
+}
+hr {
+  margin: 20px 0px;
+}
