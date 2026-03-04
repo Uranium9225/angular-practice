@@ -1,11 +1,12 @@
 import { Item } from './item';
+import { ItemComponent } from './item/item';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, ItemComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -25,7 +26,7 @@ export class App {
 
   get Items() {
     if (this.filter === 'all') {
-      return this.allItems;ng gene
+      return this.allItems;
     }
     return this.allItems.filter((item) => {
       this.filter === 'done' ? item.done : !item.done;
@@ -41,6 +42,9 @@ export class App {
     });
   }
 
+  remove(item: Item) {
+    this.allItems.splice(this.allItems.indexOf(item), 1);
+  }
   // setItem(newItemValue: string) {
   //   this.newItem?.description = newItemValue;
   //   this.newItem?.done = false;

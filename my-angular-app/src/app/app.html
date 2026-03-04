@@ -6,9 +6,16 @@
   &nbsp;
   <button (click)="addItem(newItem.value)">Add</button>
 
+    <h2>
+      {{allItems.length}}
+      <span> @if (allItems.length === 1) { item } @else { items } </span>
+    </h2>
+    
     <ul>
-      @for(item of allItems; track item.description){
-      <li>{{item.description}}</li>
+      @for (item of allItems; track item.description) {
+      <li>
+        <app-item (remove)="remove(item)" [item]="item"></app-item>
+      </li>
       }
     </ul>
 </div>
